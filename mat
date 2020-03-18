@@ -1,0 +1,80 @@
+import java.util.*;
+
+public class Main {
+	
+	public static void main(String[] args) 
+	{
+         Scanner obj=new Scanner(System.in);
+	     int T=obj.nextInt();
+	     int k=0;
+	     int a[][]=new int [T][T];
+	     for(int i=0;i<T;i++)
+	     {
+	    	 for(int j=0;j<T;j++)
+	    	 {
+	    		 a[i][j]=obj.nextInt();
+	    	 }
+	     }
+	     
+	     System.out.print(a[0][0]+" ");
+	     
+	     for(int i=1;i<=5;i++)
+	     {    
+	    	 int j=0;
+	    	 if(i%2==0)
+	    	 {
+	    		 if(a[i][j+1]<=a[T-1][T-1])
+	    		 {
+	    			 i++;
+	    			k=i;
+	    			 for(j=j+0;j<=k;j++)
+	    			 {
+	    				 System.out.print(a[i][j]+" ");
+	    				 i--;
+	    				
+	    			 }
+	    			 k=0;
+	    		 }
+	    		 else
+	    		 {
+	    			 i++;
+	    		
+	    			 for(j=j+1;j<T-1;j++)
+	    			 {
+	    				 System.out.print(a[i][j]+" ");
+	    				 i--;
+	    			 }
+	    			 
+	    		 }
+	    	 }
+	    	 else
+	    	 {
+	    		 k=i;
+	    		if(a[i][j]<=a[T-1][T-1])
+	    		{
+	    			for(j=j+0;j>=k;j--)
+	    			{
+	    				 System.out.print(a[i][j]+" ");
+	    				 i++;
+	    				
+	    			}
+	    			 k=0;
+	    		}
+	    		else
+	    		{
+	    			i++;
+	    			k=i;
+	    			for(j=j-1;j>=k;j--)
+	    			{
+	    				 System.out.print(a[i][j]+" ");
+	    				 i++;
+	    			}
+	    			 k=0;
+	    		}
+	    	 }
+	    	 
+	     }
+	    
+	}
+}
+
